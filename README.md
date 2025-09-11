@@ -50,6 +50,11 @@ source myenv/bin/activate  # On Linux/Mac
 ### 3. Install dependencies
 
 ```bash
+pip install -r requirements.txt
+```
+If you don’t have a requirements.txt, install manually:
+
+```bash
 pip install streamlit pandas numpy shap matplotlib scikit-learn xgboost
 ```
 
