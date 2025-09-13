@@ -54,8 +54,8 @@ clf_accuracy = accuracy_score(y_clf_test, y_clf_pred)
 # Initialize SHAP explainers
 # explainer_reg = shap.Explainer(xgb_reg, X_train)
 # explainer_clf = shap.Explainer(xgb_clf, X_train)
-shap_values_reg = explainer_reg(input_df)
-shap_values_clf = explainer_clf(input_df)
+explainer_reg = shap.TreeExplainer(xgb_reg)
+explainer_clf = shap.TreeExplainer(xgb_clf)
 
 # Web app interface
 st.title("Medical Insurance Prediction Model")
@@ -118,4 +118,5 @@ fig, ax = plt.subplots()
 shap.waterfall_plot(shap_values_clf[0], max_display=10, show=False)
 plt.tight_layout()
 st.pyplot(fig)
+
 
