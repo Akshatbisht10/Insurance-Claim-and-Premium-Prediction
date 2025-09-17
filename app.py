@@ -1,3 +1,5 @@
+import os
+os.environ["STREAMLIT_WATCH_FILE_SYSTEM"] = "false"
 import numpy as np
 import pandas as pd
 import streamlit as st
@@ -118,5 +120,6 @@ fig, ax = plt.subplots()
 shap.waterfall_plot(shap_values_clf[0], max_display=10, show=False)
 plt.tight_layout()
 st.pyplot(fig)
+
 
 
